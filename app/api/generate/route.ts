@@ -85,10 +85,11 @@ export async function POST(request: NextRequest) {
     });
 
     // Step 4: Generate the cartoon strip using fal.ai nano-banana-pro
-    const result = await fal.subscribe("fal-ai/nano-banana-pro", {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const result = await fal.subscribe("fal-ai/nano-banana-pro" as any, {
       input: {
         prompt: imagePrompt,
-      } as Record<string, unknown>,
+      },
     });
 
     // Extract image URL from result
