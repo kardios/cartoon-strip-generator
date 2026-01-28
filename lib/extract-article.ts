@@ -11,7 +11,7 @@ export interface ArticleExtraction {
 }
 
 export async function extractArticle(articleText: string): Promise<ArticleExtraction> {
-  const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+  const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
   const prompt = `You are a visual storyteller preparing material for an editorial cartoon. Analyze this news article and extract elements for a compelling, SIMPLE cartoon.
 
