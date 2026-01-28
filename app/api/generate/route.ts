@@ -88,9 +88,7 @@ export async function POST(request: NextRequest) {
     const result = await fal.subscribe("fal-ai/nano-banana-pro", {
       input: {
         prompt: imagePrompt,
-        image_size: "landscape_16_9",
-        num_images: 1,
-      },
+      } as Record<string, unknown>,
     });
 
     // Extract image URL from result
