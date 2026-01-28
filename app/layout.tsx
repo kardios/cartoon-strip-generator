@@ -15,7 +15,7 @@ const sourceSerif = Source_Serif_4({
 });
 
 export const metadata: Metadata = {
-  title: "Cartoon Strip Generator",
+  title: "Cartoon Strip Maker",
   description: "Transform news articles into visual cartoon strips",
 };
 

@@ -175,7 +175,7 @@ export default function Home() {
         {/* Header */}
         <header className="text-center mb-12">
           <h1 className="text-5xl md:text-6xl font-black tracking-tight mb-4" style={{ color: "var(--foreground)" }}>
-            Cartoon Strip Generator
+            Cartoon Strip Maker
           </h1>
           <p className="text-lg" style={{ color: "var(--muted)" }}>
             Transform any news article into a visual cartoon strip
