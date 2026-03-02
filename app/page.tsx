@@ -310,7 +310,7 @@ export default function Home() {
               e.currentTarget.style.transform = "translateY(0)";
             }}
           >
-            {isLoading ? "Processing..." : "Generate Cartoon Strip"}
+            {isLoading ? "Processing..." : "Make Cartoon Strip"}
           </button>
         </div>
 

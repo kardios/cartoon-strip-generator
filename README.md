@@ -22,6 +22,9 @@ npm run dev
 ```
 
 5. Open `http://localhost:3000`.
+6. Paste an article URL and click `MAKE CARTOON STRIP`.
+
+Note: UI labels may change slightly over time; if the exact button text differs, use the main primary action button for generation.
 
 ## Prerequisites
 
