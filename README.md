@@ -1,5 +1,14 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Environment Variables
+
+Copy [`.env.example`](.env.example) to `.env.local` and fill in your keys.
+
+- `GEMINI_API_KEY` - Google Gemini API key
+- `JINA_API_KEY` - Jina AI API key for article extraction
+- `FAL_KEY` - fal.ai API key for image generation
+- `GEMINI_MODEL` (optional) - Gemini model override; defaults to `gemini-flash-latest` when unset
+
 ## Getting Started
 
 First, run the development server:
