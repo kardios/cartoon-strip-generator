@@ -8,6 +8,7 @@ import {
   Style,
   Slant,
 } from "@/lib/prompt-builder";
+import { sendTelegramOutput } from "@/lib/telegram";
 
 fal.config({
   credentials: process.env.FAL_KEY,
@@ -24,6 +25,10 @@ interface GenerateResponse {
   imageUrl: string;
   extraction: ArticleExtraction;
   prompt: string;
+  telegramDelivered: boolean;
+  telegramPhotoDelivered: boolean;
+  telegramPromptDelivered: boolean;
+  telegramError?: string;
 }
 
 export async function POST(request: NextRequest) {
@@ -102,10 +107,24 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    const telegramResult = await sendTelegramOutput({
+      imageUrl,
+      articleUrl,
+      panelCount,
+      style,
+      slant,
+      imagePrompt,
+      caption: `Cartoon strip generated (${panelCount} panel${panelCount === 1 ? "" : "s"}, ${style}, ${slant})`,
+    });
+
     const response: GenerateResponse = {
       imageUrl,
       extraction,
       prompt: imagePrompt,
+      telegramDelivered: telegramResult.telegramDelivered,
+      telegramPhotoDelivered: telegramResult.telegramPhotoDelivered,
+      telegramPromptDelivered: telegramResult.telegramPromptDelivered,
+      telegramError: telegramResult.telegramError,
     };
 
     return NextResponse.json(response);
